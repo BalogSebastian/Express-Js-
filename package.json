@@ -1,0 +1,27 @@
+{
+  "name": "expressjs",
+  "version": "1.0.0",
+  "description": "This repo contains my skills and my knowledge about express js.",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://BalogSebastian@github.com/BalogSebastian/Express-Js-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BalogSebastian/Express-Js-/issues"
+  },
+  "homepage": "https://github.com/BalogSebastian/Express-Js-#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
