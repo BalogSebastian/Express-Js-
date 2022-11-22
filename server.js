@@ -1,11 +1,27 @@
 const express = require('express')
 const app = express()
 
-app.set('view engine','ejs')
+//app.set('view engine','ejs')
 
-app.get('/', (req, res) => {
-    console.log("Not")
-    res.render("index", { text: "World"})
+app.use(express.static('public'));
+// /test/tt.html will appear on the screen the Come on string 
+app.set('view engine','ejs');
+
+app.use(express.urlencoded({extended: true})) // forms
+
+app.use(express.json())
+
+// app.get("/",(req,res) => {
+//     app.get(express.static("public"))
+// })
+
+
+
+//app.use(logger); => in this we will console log the logger in the console log
+
+//app.get('/',/*logger, logger, logger*/ (req, res) => {
+    //console.log("Not")
+    //res.render("index", { text: "World"})
     //res.send('Hi') // it will appear on the server the Hi string
 
     //res.sendStatus(500) // Internal Server Error
@@ -20,7 +36,7 @@ app.get('/', (req, res) => {
 
     //res.render('index', { text : 'World' }) 
     //res.render('index', { text212313: "Word"})
-})
+//})
 
 /* Routers */
 
@@ -43,5 +59,10 @@ const deleteRouter = require('./routes/delete')
 app.use('/users', useRouter)
 app.use('/posts', postRouter)
 app.use('/delete', deleteRouter)
+
+// function logger(req,res,next) {
+//     console.log(req.originalUrl)
+//     next()
+// }// this will actually console.log the location of where we are 
 
 app.listen(3001) // this will the make our server actually run
